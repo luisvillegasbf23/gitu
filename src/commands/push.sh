@@ -1,13 +1,15 @@
 #!/bin/sh
-if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]; then
-  echo "Usage: gitu push <branch> <message> <file> [file2 ...]"
+current_branch=$(git branch --show-current)
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+  echo "Usage: gitu push <message> <file> [file2 ...]"
+  echo "       (pushes to current branch: $current_branch)"
   exit 1
 fi
-branch="$1"
-message="$2"
-shift 2
+
+shift 1
 for f in "$@"; do
   git add "$f"
 done
-git commit -m "$message"
-git push origin "$branch"
+git commit -m "$1"
+git push origin "$current_branch"
