@@ -7,7 +7,7 @@ show_help() {
   echo ""
   echo "Usage:"
   echo "  gitu                    Show this help"
-  echo "  gitu push <branch> <message> <file> [file2 ...]   Add, commit and push"
+  echo "  gitu push <message> <file> [file2 ...]   Add, commit and push to current branch"
   echo "  gitu clean              Switch to master/main and delete all other local branches"
   echo "  gitu who                Show current git user and remote"
   echo "  gitu uninstall          Remove gitu from this machine"

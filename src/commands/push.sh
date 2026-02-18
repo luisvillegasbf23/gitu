@@ -7,9 +7,10 @@ if [ -z "$1" ] || [ -z "$2" ]; then
   exit 1
 fi
 
+message="$1"
 shift 1
 for f in "$@"; do
   git add "$f"
 done
-git commit -m "$1"
+git commit -m "$message"
 git push origin "$current_branch"
